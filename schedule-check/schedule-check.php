@@ -99,10 +99,10 @@ function addUserSchedule()
 }
 
 
-add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\add_sc_styles');
+add_action('admin_enqueue_scripts', __NAMESPACE__ . '\\add_sc_styles');
 
 function add_sc_styles()
 {
-    // Register your stylesheet
     wp_enqueue_style('sc-custom-style', plugin_dir_url(__FILE__) . 'assets/css/sc-admin.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('sc-custom-script', plugin_dir_url(__FILE__) . 'assets/js/sc-admin-script.js', array('jquery'), '1.0.0', 'all');
 }
